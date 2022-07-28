@@ -1,0 +1,5 @@
+type RegistryEntity @entity {
+  id: ID!
+  admin: String!,
+  accounts: [String!]!
+}

@@ -1,0 +1,30 @@
+specVersion: 0.0.2
+schema:
+  file: ./src/subgraph/schema.graphql
+dataSources:
+  - kind: ethereum
+    name: Registry
+    network: mainnet
+    source:
+      address: "0x47d1f3fda174270244a1d800c49f3af456f05004"
+      abi: Registry
+      startBlock: 12858909
+    mapping:
+      kind: ethereum/events
+      apiVersion: 0.0.5
+      language: wasm/assemblyscript
+      entities:
+        - RoleAdminChanged
+        - RoleGranted
+        - RoleRevoked
+      abis:
+        - name: Registry
+          file: ./src/subgraph/registry.json
+      eventHandlers:
+        - event: RoleAdminChanged(indexed bytes32,indexed bytes32,indexed bytes32)
+          handler: handleRoleAdminChanged
+        - event: RoleGranted(indexed bytes32,indexed address,indexed address)
+          handler: handleRoleGranted
+        - event: RoleRevoked(indexed bytes32,indexed address,indexed address)
+          handler: handleRoleRevoked
+      file: ./src/subgraph/mapping.ts

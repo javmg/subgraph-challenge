@@ -1,0 +1,6 @@
+/build/
+/generated
+/log
+/node_modules/
+/.idea/
+/test/.bin

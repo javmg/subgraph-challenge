@@ -1,0 +1,15 @@
+{
+  "compilerOptions": {
+    "forceConsistentCasingInFileNames": true,
+    "esModuleInterop": true,
+    "module": "commonjs",
+    "outDir": "./build/",
+    "skipLibCheck": true,
+    "strict": true,
+    "target": "es2016"
+  },
+  "include": [
+    "src/api/**/*",
+    "test/api/**/*"
+  ]
+}
